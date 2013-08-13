@@ -37,8 +37,16 @@ abstract class Person {
 		this.firstName = firstName;
 	}
 	
+	protected Attribute[] getAttributes() {
+		return attributes;
+	}
 
-//-----------------------------------CONSTRUCTOR------------------------------------//
+	protected void setAttributes(Attribute[] attributes) {
+		this.attributes = attributes;
+	}
+
+	
+	//-----------------------------------CONSTRUCTOR------------------------------------//
 	protected Person(short age, String lastName, String firstName, Attribute[] attributes){
 		this.age = age;
 		this.lastName = lastName;
