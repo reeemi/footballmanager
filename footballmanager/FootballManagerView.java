@@ -1,5 +1,5 @@
 package footballmanager;
 
-public interface FootballManagerView {
+interface FootballManagerView {
 
 }
