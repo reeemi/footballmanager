@@ -1,16 +1,15 @@
 package footballmanager;
 
 abstract class Person {
-	
-//--------------------------------VARIABLES-----------------------------------------//
-	protected 		byte 			age;
-	
-	private			String 			lastName;
-	
-	private 		String 			firstName;
-	
-	
-//------------------------------SETTERS/GETTERS-------------------------------------//
+
+	// --------------------------------VARIABLES-----------------------------------------//
+	protected byte age;
+
+	private String lastName;
+
+	private String firstName;
+
+	// ------------------------------SETTERS/GETTERS-------------------------------------//
 	protected short getAge() {
 		return age;
 	}
@@ -35,13 +34,11 @@ abstract class Person {
 		this.firstName = firstName;
 	}
 
-	
-//-----------------------------------CONSTRUCTOR------------------------------------//
-	protected Person(byte age, String lastName, String firstName){
+	// -----------------------------------CONSTRUCTOR------------------------------------//
+	protected Person(byte age, String lastName, String firstName) {
 		this.age = age;
 		this.lastName = lastName;
 		this.firstName = firstName;
 	}
-	
-	
+
 }
