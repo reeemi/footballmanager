@@ -3,13 +3,11 @@ package footballmanager;
 abstract class Person {
 	
 //--------------------------------VARIABLES-----------------------------------------//
-	protected 		short 			age;
+	protected 		byte 			age;
 	
 	private			String 			lastName;
 	
 	private 		String 			firstName;
-	
-	private			Attribute[]		attributes;
 	
 	
 //------------------------------SETTERS/GETTERS-------------------------------------//
@@ -17,7 +15,7 @@ abstract class Person {
 		return age;
 	}
 
-	protected void setAge(short age) {
+	protected void setAge(byte age) {
 		this.age = age;
 	}
 
@@ -36,22 +34,14 @@ abstract class Person {
 	protected void setFirstName(String firstName) {
 		this.firstName = firstName;
 	}
-	
-	protected Attribute[] getAttributes() {
-		return attributes;
-	}
-
-	protected void setAttributes(Attribute[] attributes) {
-		this.attributes = attributes;
-	}
 
 	
-	//-----------------------------------CONSTRUCTOR------------------------------------//
-	protected Person(short age, String lastName, String firstName, Attribute[] attributes){
+//-----------------------------------CONSTRUCTOR------------------------------------//
+	protected Person(byte age, String lastName, String firstName){
 		this.age = age;
 		this.lastName = lastName;
 		this.firstName = firstName;
-		this.attributes = attributes;
 	}
+	
 	
 }
