@@ -6,16 +6,16 @@ import java.util.Map;
 class Calendar {
 	// -----------------------------------VARIABLES--------------------------------------//
 	private int daysPassed;
-	private Map<Integer, Day> days;
+	private Map<Integer, Date> days;
 
 	// -----------------------------------CONSTRUCTORS-----------------------------------//
-	private Calendar(int daysPassed, Map<Integer, Day> days) {
+	private Calendar(int daysPassed, Map<Integer, Date> days) {
 		this.daysPassed = daysPassed;
 		this.days = days;
 	}
 
 	protected Calendar() {
-		this(0, new HashMap<Integer, Day>());
+		this(0, new HashMap<Integer, Date>());
 	}
 
 	// ---------------------------------METHODS------------------------------------------//
@@ -28,7 +28,7 @@ class Calendar {
 		if (this.days.containsKey(onDay)) {
 			// change the existing day value
 		} else {
-			this.days.put(onDay, new Day(onDay, event));
+			this.days.put(onDay, new Date(onDay, event));
 		}
 	}
 

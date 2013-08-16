@@ -3,14 +3,14 @@ package footballmanager;
 import java.util.ArrayList;
 import java.util.List;
 
-class Day {
+class Date {
 
 	// -------------------------------VARIABLES---------------------------------------//
 	private int day; // TODO: Add more date information later!
 	private List<Event> events;
 
 	// ------------------------------CONSTRUTORS--------------------------------------//
-	protected Day(int onDay, Event event) {
+	protected Date(int onDay, Event event) {
 		this.day = onDay;
 		// this.event = event;
 		this.events = new ArrayList<Event>();
@@ -18,7 +18,7 @@ class Day {
 	}
 	
 	// ------------------------------METHODS------------------------------------------//
-	protected Day addEvent(Event event) {
+	protected Date addEvent(Event event) {
 		this.events.add(event);
 		return this;
 	}
