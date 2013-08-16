@@ -29,5 +29,9 @@ class Model extends Observable {
 		this.notifyObservers(this.calendar);
 	}
 	
+	protected void addEvent(int date, Event event) {
+		this.calendar.addEvent(date, event);
+	}
+	
 	
 }
