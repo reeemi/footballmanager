@@ -20,15 +20,18 @@ class Calendar {
 
 	// ---------------------------------METHODS------------------------------------------//
 	protected Calendar newDay() {
+		if(dates.containsKey(day)){
+			dates.get(day).executeEvents();
+		}
 		this.day++;
 		return this;
 	}
 
-	protected void addEvent(int onDay, Event event) {
-		if (this.dates.containsKey(onDay)) {
-			// change the existing day value
+	protected void addEvent(int date, Event event) {
+		if (this.dates.containsKey(date)) {
+			this.dates.get(date).addEvent(event);
 		} else {
-			this.dates.put(onDay, new Date(onDay, event));
+			this.dates.put(date, new Date(date, event));
 		}
 	}
 	

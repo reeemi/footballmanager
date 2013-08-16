@@ -2,10 +2,10 @@ package footballmanager;
 
 import java.util.Observable;
 
-class FootballManagerModel extends Observable {
+class Model extends Observable {
 	private Calendar calendar;
 	
-	protected FootballManagerModel(FootballManagerView footballManagerView) {
+	protected Model(ViewMain footballManagerView) {
 		this.calendar = new Calendar();
 		this.addObserver(footballManagerView);
 		this.setChanged();

@@ -23,6 +23,12 @@ class Date {
 		return this;
 	}
 	
+	protected void executeEvents(){
+		for(Event e: events){
+			e.execute();
+		}
+	}
+	
 	// ---------------------------GETTER/SETTER---------------------------------------//
 	protected int getDayValue() {
 		return this.day;

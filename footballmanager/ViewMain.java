@@ -8,7 +8,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 
-class FootballManagerView implements Observer {
+class ViewMain implements Observer, View {
 	
 	
 	//------------------------------------VARIABLES-----------------------------------------//
@@ -34,7 +34,7 @@ class FootballManagerView implements Observer {
 
 	
 	//------------------------------------CONSTRUCTOR--------------------------------------//
-		protected FootballManagerView(){
+		protected ViewMain(){
 			this.initialize();
 		}
 	
@@ -59,6 +59,7 @@ class FootballManagerView implements Observer {
 		this.mainFrame.setVisible(true);
 	}
 
+
 	@Override
 	public void update(Observable model, Object change) {
 		if(change instanceof Calendar) {
@@ -67,7 +68,8 @@ class FootballManagerView implements Observer {
 		}
 	}
 	
-	public void addController(FootballManagerController controller){
+	@Override
+	public void addController(ControllerMain controller){
 		this.nextDayButton.addActionListener(controller);
 	}
 
