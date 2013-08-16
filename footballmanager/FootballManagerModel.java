@@ -10,14 +10,11 @@ class FootballManagerModel extends Observable {
 		this.addObserver(footballManagerView);
 		this.setChanged();
 		this.notifyObservers(this.calendar);
-		this.clearChanged();
-		System.out.println("Send notification.");
 	}
 	
 	protected void newDay() {
 		this.calendar.newDay();
 		this.setChanged();
 		this.notifyObservers(this.calendar);
-		this.clearChanged();
 	}
 }

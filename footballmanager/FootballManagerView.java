@@ -1,5 +1,6 @@
 package footballmanager;
 
+import java.awt.FlowLayout;
 import java.util.Observable;
 import java.util.Observer;
 
@@ -8,7 +9,9 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 
 class FootballManagerView implements Observer {
-
+	
+	
+	//------------------------------------VARIABLES-----------------------------------------//
 	private static final int MAIN_FRAME_WIDTH = 500;
 	private static final int MAIN_FRAME_HEIGHT = 500;
 	
@@ -19,18 +22,32 @@ class FootballManagerView implements Observer {
 	private static final int NEXT_DAY_BUTTON_HEIGHT = 40;
 	
 	
-	JFrame mainFrame;
-	JLabel dayLabel;
-	JButton nextDayButton;
+	private JFrame mainFrame;
+	private JLabel dayLabel;
+	private JButton nextDayButton;
 
+	
+	//----------------------------------GETTERS/SETTERS-------------------------------------//
+	protected JButton getNextDayButton() {
+		return nextDayButton;
+	}
+
+	
+	//------------------------------------CONSTRUCTOR--------------------------------------//
+		protected FootballManagerView(){
+			this.initialize();
+		}
+	
+	
+	//-----------------------------------METHODS-------------------------------------------//
 	protected void initialize() {
 		this.mainFrame = new JFrame();
 		this.mainFrame.setSize(MAIN_FRAME_WIDTH, MAIN_FRAME_HEIGHT);
+		this.mainFrame.setLayout(new FlowLayout());
 		
 		this.dayLabel = new JLabel();
 		this.dayLabel.setSize(DAY_LABEL_WIDTH, DAY_LABEL_HEIGHT);
 		this.dayLabel.setVisible(true);
-		this.dayLabel.setText("-1");
 		
 		this.nextDayButton = new JButton();
 		this.nextDayButton.setSize(NEXT_DAY_BUTTON_WIDTH, NEXT_DAY_BUTTON_HEIGHT);
@@ -48,7 +65,10 @@ class FootballManagerView implements Observer {
 			// Change day to new day value
 			this.dayLabel.setText(Integer.toString( (((Calendar) change).getDay()) ) );
 		}
-		System.out.println("Notified.");
+	}
+	
+	public void addController(FootballManagerController controller){
+		this.nextDayButton.addActionListener(controller);
 	}
 
 }
