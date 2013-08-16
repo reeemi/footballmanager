@@ -28,7 +28,7 @@ class ControllerMain implements ActionListener, Controller{
 		if(e.getSource().equals(view.getMp_nextDayButton())){
 			this.model.newDay();
 		} else if(e.getSource().equals(view.getMp_eventComboBox())){
-			if(((JComboBox)(e.getSource())).getSelectedItem().equals("Training")) this.model.addEvent((int)this.view.getMp_scheduledDateSpinner().getValue(), new EventTraining());
+			if(((JComboBox)(e.getSource())).getSelectedItem().equals("Training")) this.model.addEvent(((Integer)this.view.getMp_scheduledDateSpinner().getValue()).intValue(), new EventTraining());
 		}
 	}
 	
